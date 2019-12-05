@@ -36,16 +36,21 @@ after_script:
   - git config user.email "1103839827@qq.com"
   - git add .
   - git commit -m "Update Blog By TravisCI With Build"
+  # Github Pages
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master 
+  # Coding Pages
+  #- git push --force --quiet "https://qinyuanpei:${CO_TOKEN}@${CO_REF}" master:master
+  - git tag v0.0.$TRAVIS_BUILD_NUMBER -a -m "Auto Taged By TravisCI With Build $TRAVIS_BUILD_NUMBER"
   # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
   # Github Pages
   - git push --quiet "https://${GH_TOKEN}@${GH_REF}" master:master --tags
   # Coding Pages
-  - git push --quiet "https://huanglilijie:${CODING_TOKEN}@${CO_REF}" master:master --tags
+  #- git push --quiet "https://huanglilijie:${CODING_TOKEN}@${CO_REF}" master:master --tags
 # End: Build LifeCycle
 
 env:
  global:
-   # Github Pages
-   - GH_REF: github.com/huanglilijie/huanglilijie.github.io
-   # Coding Pages
-   - CO_REF: git.coding.net/huanglilijie/huanglilijie.coding.me.git
+  # Github Pages
+  - GH_REF: github.com/huanglilijie/huanglilijie.github.io
+  # Coding Pages
+  - CO_REF: git.coding.net/huanglilijie/huanglilijie.coding.me.git
