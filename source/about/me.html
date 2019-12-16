@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+        .customPages {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="customPages">
+        <h3 class="pageTitle"></h3>
+        <h5 class="pageTitle_from"></h5>
+    </div>
+    <script>
+        function getText() {
+            $.ajax({
+                url: 'https://v1.hitokoto.cn/?c=d',
+                type: 'get',
+                success: function (data) {
+                    console.log(data)
+                    $(".pageTitle").text(data.hitokoto)
+                    $(".pageTitle_from").text("——" + data.from)
+                }
+            })
+        }
+        getText()
+    </script>
+</body>
+
+</html>
