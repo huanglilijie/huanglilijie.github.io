@@ -6,22 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <style>
         .customPages {
-            display: flex;
             align-items: center;
+        }
+
+        .pageTitle {
+            line-height: 35px;
+        }
+
+        .pageTitle_from {
+            text-align: right;
+        }
+
+        .music_warp {
+            /* width: 350px; */
         }
     </style>
 </head>
 
 <body>
+    <div class="music_warp">
+        {% aplayer "Love Yourself" "Justin Bieber" "https://m701.music.126.net/20191217134518/c3948326497bac0c2609eb9d6eedb1ec/jdyyaac/520c/5658/0f52/ef129d7beea2a1e125a988d0368364f2.m4a" "http://p1.music.126.net/SmaGv_bQTYy5_uOmnAz4Mw==/3285340746015046.jpg?param=130y130" "autoplay" %}
+    </div>
     <div class="customPages">
         <h3 class="pageTitle"></h3>
         <h5 class="pageTitle_from"></h5>
     </div>
+
     <script>
-        function getText() {
+        (function getText() {
+            console.log("1")
             $.ajax({
                 url: 'https://v1.hitokoto.cn/?c=d',
                 type: 'get',
@@ -31,8 +47,9 @@
                     $(".pageTitle_from").text("——" + data.from)
                 }
             })
-        }
-        getText()
+        })()
+
+
     </script>
 </body>
 
