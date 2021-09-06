@@ -49,7 +49,7 @@ $(function () {
 
 });
 function showPageByIndex(index) {
-  $(".home,.solution,.guide,.city,.restaurant").hide();
+  $(".home,.solution,.guide,.city,.restaurant,.contact").hide();
   switch (index) {
     case 0:
       $(".home").show();
