@@ -46,7 +46,12 @@ $(function () {
       $(".nav").show();
     }, 1000);
   });
-
+  $(".preimg img").click(function(){
+    var src=$(this).attr('src');
+    $(".solutionsInner img").attr('src',src)
+    $(".solutionsInner").show();
+    var a=new RTP.PinchZoom($('#pinch-zoom'), {});
+  })
 });
 function showPageByIndex(index) {
   $(".home,.solution,.guide,.city,.restaurant,.contact").hide();
