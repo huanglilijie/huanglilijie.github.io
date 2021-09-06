@@ -6,36 +6,50 @@ body,
 html {
   width: 100%;
   height: 100%;
+  position: relative;
+}
+@media screen and (min-width: 640px) {
+  body > div {
+    max-width: 414px;
+    max-height: 736px;
+  }
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
 }
 img {
   width: 100%;
 }
-.loading{
+.loading {
   z-index: 9;
 }
-.loading .text{
-color: #fff;
-position: absolute;
+.loading .text {
+  color: #fff;
+  position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,75%) scale(1.5);
+  transform: translate(-50%, 75%) scale(1.5);
 }
 /*coffee cup*/
-.coffee_cup{
+.coffee_cup {
   width: 20px;
   height: 24px;
-  border: 1px rgba(255,255,255,1) solid;
+  border: 1px rgba(255, 255, 255, 1) solid;
   border-radius: 0px 0px 5px 5px;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-150%) scale(1.5);
+  transform: translate(-50%, -150%) scale(1.5);
 }
-.coffee_cup:after, .coffee_cup:before{
+.coffee_cup:after,
+.coffee_cup:before {
   position: absolute;
   content: "";
 }
-.coffee_cup:after{
+.coffee_cup:after {
   width: 5px;
   height: 12px;
   border: 1px #fff solid;
@@ -43,23 +57,27 @@ position: absolute;
   border-radius: 0px 20px 20px 0px;
   left: 20px;
 }
-.coffee_cup:before{
+.coffee_cup:before {
   width: 1px;
   height: 6px;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255, 255, 255, 1);
   top: -10px;
   left: 4px;
-  box-shadow: 5px 0px 0px 0px rgba(255,255,255,1),
-              5px -5px 0px 0px rgba(255,255,255,1),
-              10px 0px 0px 0px rgba(255,255,255,1);
+  box-shadow: 5px 0px 0px 0px rgba(255, 255, 255, 1),
+    5px -5px 0px 0px rgba(255, 255, 255, 1),
+    10px 0px 0px 0px rgba(255, 255, 255, 1);
   -webkit-animation: steam 1s linear infinite alternate;
-     -moz-animation: steam 1s linear infinite alternate;
-          animation: steam 1s linear infinite alternate;
+  -moz-animation: steam 1s linear infinite alternate;
+  animation: steam 1s linear infinite alternate;
 }
 
-@-webkit-keyframes steam{
-  0%{height: 0px;}
-  100%{height: 6px;}            
+@-webkit-keyframes steam {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 6px;
+  }
 }
 .page {
   width: 100%;
@@ -76,7 +94,8 @@ position: absolute;
 .solution,
 .guide,
 .city,
-.restaurant,.contact {
+.restaurant,
+.contact {
   display: none;
 }
 .menu {
@@ -148,7 +167,7 @@ position: absolute;
   height: 50%;
   float: left;
 }
-.preimg{
+.preimg {
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
@@ -159,20 +178,20 @@ position: absolute;
   background: #43aaea;
   border-radius: 10px;
   color: #fff;
-  padding:0 20px;
+  padding: 0 20px;
   overflow-y: auto;
   animation: changeSise 0.4s both;
   font-size: 16px;
 }
 
 @keyframes changeSise {
-  0%{
+  0% {
     left: 30%;
     top: 30%;
     right: 30%;
     bottom: 30%;
   }
-  100%{
+  100% {
     left: 5%;
     top: 40px;
     right: 5%;
@@ -180,24 +199,24 @@ position: absolute;
   }
 }
 
-.indexInner.index1{
+.indexInner.index1 {
   background: #a64cd8;
 }
-.indexInner.index2{
+.indexInner.index2 {
   background: #4b36dd;
 }
-.indexInner.index3{
+.indexInner.index3 {
   background: #1a5ee3;
 }
 .indexInner .icon {
   width: 15%;
   padding: 20px 0%;
 }
-h3{
+h3 {
   font-size: 20px;
   margin-top: 7px;
 }
-h5{
+h5 {
   font-size: 16px;
   margin-top: 5px;
 }
@@ -224,7 +243,7 @@ h5{
   bottom: 0;
   left: 0;
   right: 0;
-  overflow-y:auto;
+  overflow-y: auto;
   display: none;
   z-index: 9;
   background: rgba(0, 0, 0, 0.9);
@@ -242,7 +261,7 @@ h5{
   animation: zoomIn 1s 0.3s both;
 }
 .s3 {
-  right:-10px;
+  right: -10px;
   animation: zoomIn 1s 0.4s both;
 }
 .s4 {
@@ -263,7 +282,7 @@ h5{
   top: 0;
   bottom: 90px;
 }
-.map_bg img{
+.map_bg img {
   height: 100%;
 }
 .map {
@@ -278,9 +297,9 @@ h5{
   z-index: 9;
   background: #000;
 }
-.map_img{
+.map_img {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   background: #000;
@@ -288,17 +307,17 @@ h5{
 .map > img {
   width: 100%;
 }
-.pinch-zoom-container{
+.pinch-zoom-container {
   background: #000;
   height: 100% !important;
 }
 .close {
-  position: fixed;
+  position: absolute;
   right: 10px;
   top: 10px;
   width: 30px;
 }
-.index_close{
+.index_close {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -366,35 +385,35 @@ div.view_btn {
   line-height: 20px;
   margin-bottom: 10px;
 }
-.card{
+.card {
   background: #11acf0;
   border-radius: 10px;
   color: #fff;
   margin: 5px 20px;
   padding: 10px;
 }
-.card2{
+.card2 {
   background: #a54dda;
 }
-.card3{
+.card3 {
   background: #1d5de4;
 }
-.card4{
+.card4 {
   background: #4a35dd;
 }
-.card h3{
+.card h3 {
   font-size: 16px;
   margin-top: 0;
 }
-.card h5{
+.card h5 {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 5px;
 }
-.card p{
+.card p {
   font-size: 14px;
 }
-.card p a{
+.card p a {
   color: #fff;
   text-decoration: none;
 }
