@@ -365,6 +365,7 @@ div.view_btn {
   flex-direction: column;
   animation: slideInLeft 0.5s both;
   font-size: 20px;
+  overflow-y: auto;
 }
 .content .icon {
   width: 90%;
